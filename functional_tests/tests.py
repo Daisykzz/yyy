@@ -66,7 +66,7 @@ class NewVisitorTest(LiveServerTestCase):
         # 张三想知道这个网站是否会记住他的清单
         # 他看到网站为他生成了一个唯一的URL
 
-def test_multiple_users_can_start_lists_at_different_urls(self):
+    def test_multiple_users_can_start_lists_at_different_urls(self):
         # 张三新建了一个待办事项清单
         self.browser.get(self.live_server_url)
         inputbox = self.browser.find_element(By.ID,'id_new_item')
