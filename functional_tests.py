@@ -26,7 +26,7 @@ class NewVisitorTest(unittest.TestCase):
         inputbox = self.browser.find_element(By.ID, 'id_new_item')
         self.assertEqual(
             inputbox.get_attribute('placeholder'),
-            'Enter a to-da item'
+            'Enter a to-do item'
         )
 
         #输入框中输入“Buy flowers”
@@ -40,7 +40,7 @@ class NewVisitorTest(unittest.TestCase):
         table = self.browser.find_element(By.ID, 'id_list_table')
         rows = table.find_elements(By.TAG_NAME, 'tr')
         self.assertIn('1: Buy flowers', [row.text for row in rows])
-        
+
         self.fail('Finish the test!')
 
 if __name__ == '__main__':
