@@ -120,3 +120,16 @@ class NewVisitorTest(StaticLiveServerTestCase):
             512,
             delta=10
         )
+        
+        # 他新建了一个待办事项清单，发现输入框还是完美的居中显示
+        inputbox.send_keys('testing')
+        inputbox.send_keys(Keys.ENTER)
+        
+        self.wait_for_row_in_list_table('1: testing')
+        
+        inputbox = self.browser.find_element(By.ID,'id_new_item')
+        self.assertAlmostEqual(
+            inputbox.location['x'] + inputbox.size['width'] / 2,
+            512,
+            delta=10
+        )
